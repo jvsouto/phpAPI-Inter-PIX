@@ -29,7 +29,7 @@ try{
 	
 	
 	
-	$response = $obj_api_pix->consult_all_pix($date."T18:00:00-03:00",$date."T23:59:59-03:00",null);
+	$response = $obj_api_pix->consult_all_pix($date."T00:00:00-03:00",$date."T23:59:59-03:00",null);
 	if (array_key_exists("error",$response)){
 		echo "<h2>Erro: ".$response["error"]."</h2>";
 	}else{ 
@@ -51,41 +51,45 @@ try{
 			}
 			
 			echo '
-			<table id="resultado">	
+			<table>	
 			<tr>
-				<th class="rounded-company" >TXID</th>
-				<th class="rounded-company" >Valor</th>
-				<th class="rounded-company" >Horario</th>
-				<th class="rounded-company" >STATUS</th>
-				<th class="rounded-company" >PAGO</th>
-				<th class="rounded-company" >Devoluções</th>
+				<th>TXID</th>
+				<th>Valor</th>
+				<th>Horario</th>
+				<th>STATUS</th>
+				<th>PAGO</th>
+				<th>Devoluções</th>
 			</tr>
 			<tbody>';
 			
 			foreach($itens as $key){ 		
 				if(isset($key["txid"])){	//Apenas para transações com identificador
-				//if(isset($key["pix"][0])){	//Apenas para transações pagas
+				if(isset($key["pix"][0])){	//Apenas para transações pagas
 					echo '<tr>';
 					
-						echo '<td class="listar-simples">'; if(isset($key["txid"])){echo $key["txid"];} echo '</td>';
+						echo '<td>'; if(isset($key["txid"])){echo $key["txid"];} echo '</td>';
 						
-						echo '<td class="listar-simples">'; echo $key["valor"]["original"]; echo '</td>';
+						echo '<td>'; echo $key["valor"]["original"]; echo '</td>';
 						
-						echo '<td class="listar-simples">';
+						echo '<td>';
 							$date = strtotime($key["calendario"]["criacao"]);
 							echo date("d/M/Y H:i:s", $date); 
-						echo '<td class="listar-simples">'; echo $key["status"];echo '</td>';
+						echo '<td>'; echo $key["status"];echo '</td>';
 						
-						echo '<td class="listar-simples">';
+						echo '<td>';
 						if(isset($key["pix"][0]["horario"])){
 							$date = strtotime($key["pix"][0]["horario"]);
 							echo date("d/M/Y H:i:s", $date); 				
 						}
 						echo '</td>';
 						
-						echo '<td class="listar-simples">'; if(isset($key["pix"][0]["devolucoes"])){echo build_table($key["pix"][0]["devolucoes"]);}  echo '</td>';
+						echo '<td>'; 
+						if(!empty($key["pix"][0]["devolucoes"])){
+							echo build_table($key["pix"][0]["devolucoes"]);
+						}  
+						echo '</td>';
 					echo '</tr>';
-				//}
+				}
 				}
 			}	
 	
