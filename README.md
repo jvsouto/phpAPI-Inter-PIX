@@ -34,10 +34,12 @@ na pasta /etc/cron.d colocamos o arquivo cron_verificarPix
 
 (edite ele com o caminho até o arquivo verificarPagamentoPix.php)
 
+## Demonstração
+https://youtu.be/dkeuCRNy2WE
+
 ## Doação
 ### Doações via PIX / Donations PIX: 
 #### Email: otavio.grrd@gmail.com
-
 
 
 ## Licença
