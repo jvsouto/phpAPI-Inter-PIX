@@ -1,0 +1,14 @@
+# /etc/cron.d/execute
+# para consultar o pix no banco a cada 5seg, deixar comentado quando não estiver em uso
+ * * * * * root /usr/bin/php  /var/www/Caminho/Até/api/verifica_pix.php
+ * * * * * root sleep 5;/usr/bin/php  /var/www/Caminho/Até/api/verifica_pix.php
+ * * * * * root sleep 10;/usr/bin/php /var/www/Caminho/Até/api/verifica_pix.php
+ * * * * * root sleep 15;/usr/bin/php /var/www/Caminho/Até/api/verifica_pix.php
+ * * * * * root sleep 20;/usr/bin/php /var/www/Caminho/Até/api/verifica_pix.php
+ * * * * * root sleep 25;/usr/bin/php /var/www/Caminho/Até/api/verifica_pix.php
+ * * * * * root sleep 30;/usr/bin/php /var/www/Caminho/Até/api/verifica_pix.php
+ * * * * * root sleep 35;/usr/bin/php /var/www/Caminho/Até/api/verifica_pix.php
+ * * * * * root sleep 40;/usr/bin/php /var/www/Caminho/Até/api/verifica_pix.php
+ * * * * * root sleep 45;/usr/bin/php /var/www/Caminho/Até/api/verifica_pix.php
+ * * * * * root sleep 50;/usr/bin/php /var/www/Caminho/Até/api/verifica_pix.php
+ * * * * * root sleep 55;/usr/bin/php /var/www/Caminho/Até/api/verifica_pix.php
