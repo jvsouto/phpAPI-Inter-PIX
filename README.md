@@ -16,7 +16,7 @@ por Otávio Garrido.
 
 
 ## Licença
-GNU General Public License v3.0 [GNU General][]
+GNU General Public License v3.0 [GNU General]
 
 
 
