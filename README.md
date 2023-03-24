@@ -41,7 +41,7 @@ na pasta /etc/cron.d colocamos o arquivo cron_verificarPix
 
 
 ## Licença
-GNU General Public License v3.0 [GNU General][]
+GNU General Public License v3.0 [GNU General]
 
 
 
